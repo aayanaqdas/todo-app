@@ -45,7 +45,7 @@ export function Todo() {
               <p className="text-gray-300">{task.description}</p>
             </div>
           </li>
-        ))}
+        )).reverse()}
       </ul>
     </div>
   );

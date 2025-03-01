@@ -23,14 +23,14 @@ export function TodoInputs({ addTask }) {
       <h1 className=" mb-2 mt-2 text-3xl text-white">Add task</h1>
       <div className="flex flex-col gap-4 w-full max-w-sm">
         <input
-          className="px-5 py-4 outline-0 rounded-lg bg-gray-800 placeholder-gray-400 text-sm text-gray-400 w-full shadow-xl "
+          className="px-5 py-4 outline-0 rounded-lg bg-gray-800 placeholder-gray-400 text-l text-gray-400 w-full shadow-xl "
           type="text"
           placeholder="Write taskname"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
         />
         <input
-          className="px-5 py-4 outline-0 rounded-lg bg-gray-800 placeholder-gray-400 text-sm text-gray-400 w-full shadow-xl "
+          className="px-5 py-4 outline-0 rounded-lg bg-gray-800 placeholder-gray-400 text-l text-gray-400 w-full shadow-xl "
           type="text"
           placeholder="Write task description"
           value={taskDesc}
