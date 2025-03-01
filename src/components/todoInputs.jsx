@@ -8,7 +8,8 @@ export function TodoInputs({ addTask }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (taskName.trim() && taskDesc.trim()) {
-      addTask({ name: taskName, description: taskDesc });
+      const task = { name: taskName, description: taskDesc };
+      addTask(task);
       setTaskName("");
       setTaskDesc("");
     }
@@ -22,14 +23,14 @@ export function TodoInputs({ addTask }) {
       <h1 className=" mb-2 mt-2 text-3xl text-white">Add task</h1>
       <div className="flex flex-col gap-4 w-full max-w-sm">
         <input
-          className="px-5 py-4 outline-0 bg-gray-800 placeholder-gray-400 text-sm text-gray-400 w-full shadow-xl "
+          className="px-5 py-4 outline-0 rounded-lg bg-gray-800 placeholder-gray-400 text-sm text-gray-400 w-full shadow-xl "
           type="text"
           placeholder="Write taskname"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
         />
         <input
-          className="px-5 py-4 outline-0  bg-gray-800 placeholder-gray-400 text-sm text-gray-400 w-full shadow-xl "
+          className="px-5 py-4 outline-0 rounded-lg bg-gray-800 placeholder-gray-400 text-sm text-gray-400 w-full shadow-xl "
           type="text"
           placeholder="Write task description"
           value={taskDesc}
@@ -37,7 +38,7 @@ export function TodoInputs({ addTask }) {
         />
         <button
           type="submit"
-          className="py-2 mt-4 cursor-pointer rounded-sm bg-blue-600 text-white text-center w-full"
+          className="py-2 mt-4 cursor-pointer rounded-lg bg-blue-600 hover:bg-blue-900 text-white text-center w-full"
         >
           Add to list
         </button>
