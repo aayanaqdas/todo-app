@@ -29,23 +29,25 @@ export function Todo() {
     <div className=" flex flex-col gap-25">
       <TodoInputs addTask={addTask} />
       <ul className="flex flex-col gap-6 items-center w-full">
-        {tasks.map((task, index) => (
-          <li
-            key={index}
-            className=" relative flex flex-col gap-2 bg-gray-800 hover:bg-gray-700 rounded-lg px-6 py-5 shadow-xl w-full max-w-sm"
-          >
-            <span
-              onClick={() => deleteTask(index)}
-              className="absolute top-2 right-5 text-2xl text-gray-400 cursor-pointer"
+        {tasks
+          .map((task, index) => (
+            <li
+              key={index}
+              className=" relative flex flex-col gap-2 bg-gray-800 hover:bg-gray-700 rounded-lg px-6 py-5 shadow-xl w-full max-w-sm break-words break-all "
             >
-              &times;
-            </span>
-            <div className="flex flex-col gap-2">
-              <h2 className="text-white text-lg">{task.name}</h2>
-              <p className="text-gray-300">{task.description}</p>
-            </div>
-          </li>
-        )).reverse()}
+              <span
+                onClick={() => deleteTask(index)}
+                className="absolute top-2 right-5 text-2xl text-gray-400 cursor-pointer"
+              >
+                &times;
+              </span>
+              <div className="flex flex-col gap-2">
+                <h2 className="text-white text-lg">{task.name}</h2>
+                <p className="text-gray-300">{task.description}</p>
+              </div>
+            </li>
+          ))
+          .reverse()}
       </ul>
     </div>
   );
